@@ -1,0 +1,29 @@
+PRECONDICIONES:
+Se tiene la clase FederacionIntergalactica que extiende de AVL<Nave>.
+Se crea la clase Nave con: código, clase y combustible.
+
+LENGUAJE NATURAL:
+El método privado recorre el árbol y agrega a una lista pasada por parámetro el código de las naves "Explorador".
+El método público solamente llama al privado con una lista vacía y la raíz del árbol.
+
+Lista<int> exploradoras(){
+        Lista<int> codigos;
+        exploradoras(codigos, raiz);
+        return naves;
+}
+
+void exploradoras(Lista<int> lista, NodoArbol<Nave> nodo){
+	si el nodo es null entonces
+		return
+	finSi
+
+	si Nave.clase es "Explorador" entonces
+		lista.agregar(Nave.codigo)
+	finSi        
+
+	exploradoras(lista, nodo.izquierdo)
+	exploradoras(lista, nodo.derecho)
+}
+
+POSTCONDICIONES:
+El primer método (público) devuelve una lista de enteros con los ids de las naves exploradoras (desordenada).

@@ -1,0 +1,40 @@
+PRECONDICIONES:
+Se tiene la clase FederacionIntergalactica que extiende de AVL<Nave>.
+Se crea la clase Nave con: código, clase y combustible.
+
+LENGUAJE NATURAL:
+El método privado recorre el árbol y agrega a una lista pasada por parámetro el combustible de las naves "Explorador".
+El método público llama al privado con una lista vacía y la raíz del árbol y finalmente calcula el promedio.
+
+int combustiblePromedio(){
+        Lista<int> combustibles
+        int total = 0;
+        combustiblePromedio(combustibles, raiz);
+	        
+
+	para i = 0 hasta combustibles.tamaño - 1:
+    		total = total + combustibles[i]
+
+	si combustibles.tamaño == 0:
+    		return 0
+	finSi
+
+	return total / combustibles.tamaño
+}
+
+void combustiblePromedio(Lista<int> combustible, NodoArbol<Nave> nodo){
+        si nodo es null entonces
+		return;
+	finSi
+
+        si Nave.clase es "Explorador entonces
+		combustible.agregar(Nave.combustible)
+	finSi
+
+	combustiblePromedio(combustible, nodo.izquierdo)
+	combustiblePromedio(combustible, nodo.derecho)
+}
+
+
+POSTCONDICIONES:
+Se devuelve el promedio de combustible de las naves "Explorador".
