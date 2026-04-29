@@ -1,0 +1,3 @@
+(42, "Fireball"), (17, "Ice Lance"), (58, "Thunder"),
+(9, "Invisibility"), (31, "Levitate"), (73, "Summon"),
+(25, "Heal"), (50, "Teleport"), (65, "Shield"), (88, "Curse")
