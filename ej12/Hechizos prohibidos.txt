@@ -1,0 +1,27 @@
+Se debe recorrer el arbol de busqueda binaria que tendra el grimorio en cualquier orden(yo opte por impar) e ir verificando en cada nodo si su ID es impar, en caso que sea impar se añadira a una lista de hechizos la cual contendra los prohibiods, al final esta lista se retornada.
+
+Precondiciones:
+El arbol puede estar vacio o no pero debera estar bien inicializado.
+Los nodos del arbol seran de tipo T : Hechizo, los nodos tendran ID y nombre del hechizo.
+
+Postcondiciones:
+Se retorna una lista con todos los hechizos prohibidos(id impar) y el arbol no sera modificado.
+
+Pseudocodigo:
+
+obtenerProhibidos(arbol):
+    lista <- nueva lista vacía
+
+    procedimiento recorrerInOrder(nodo):
+        si nodo = null:
+            retornar
+        recorrerInOrder(nodo.izquierdo)
+        si nodo.dato.esProhibido():
+            agregar nodo.dato a lista
+        recorrerInOrder(nodo.derecho)
+
+    recorrerInOrder(arbol.raiz)
+    retornar lista
+
+Orden:
+O(N) ya que se recorrera todo el arbol

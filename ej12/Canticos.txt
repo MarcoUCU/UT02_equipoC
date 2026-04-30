@@ -1,0 +1,30 @@
+La funcion recorre el arbol binario de busqueda en inorden para conseguir los datos segun su ID.
+Se seleccionan los que tienen ID impar y los concatena con un - en una string
+Devuelve la string con todos los nombres de los hechizos concatenados
+
+Precondiciones:
+El arbol puede estar vacio o no pero debera estar bien inicializado.
+Los nodos del arbol seran de tipo T : Hechizo, los nodos tendran ID y nombre del hechizo.
+
+Postcondiciones:
+Se retorna un string con los nombres de los hechizos prohibidos en orden creciente de ID, separados por "-"
+
+Pseudocodigo:
+
+generarCantico(arbol):
+    resultado <- string vacío
+
+    procedimiento recorrerInOrder(nodo):
+        si nodo = null:
+            retornar
+        recorrerInOrder(nodo.izquierdo) 
+        si nodo.dato.id es impar:
+            si resultado no está vacío:
+                resultado ← resultado + " - "
+            resultado ← resultado + nodo.dato.nombre
+        recorrerInOrder(nodo.derecho)
+    recorrerInOrder(arbol.raiz)
+    retornar resultado
+
+Orden:
+Tiene orden O(n) ya que siempre recorre todo el arbol
